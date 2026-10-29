@@ -1,0 +1,650 @@
+<meta charset="utf-8">
+<title>StudioExclusive — Wix kópia</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;300;400;500;700&family=Playfair+Display:ital,wght@1,300;1,400;1,500&display=swap">
+<style>
+:root {
+  --blush: #FADDDD;
+  --mauve: #C2B2B4;
+  --mocha: #503C35;
+  --dark-body: #503C35;
+  --black: #000;
+  --white: #fff;
+  --rose:  #C2B2B4;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 300;
+  background: var(--white);
+  color: var(--mocha);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; color: inherit; }
+/* italic text uses Playfair Display — our only serif */
+.it { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; }
+
+/* ─── NAV ─── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: 88px; background: var(--mauve);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 max(32px, env(safe-area-inset-right,0px)) 0 max(32px, env(safe-area-inset-left,0px));
+}
+.nav-sk {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--blush); border-radius: 24px;
+  padding: 8px 16px 8px 10px;
+  font-size: .82rem; font-weight: 400; letter-spacing: .04em; cursor: pointer;
+  color: #242323;
+}
+.nav-menu {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--blush); border-radius: 300px;
+  padding: 10px 12px 10px 22px;
+  font-size: .82rem; font-weight: 400; letter-spacing: .18em; text-transform: uppercase;
+  cursor: pointer; color: #000;
+}
+.nav-dot {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--mocha);
+}
+
+/* ─── NAV SPACER ─── */
+.nav-spacer { height: 88px; background: var(--mauve); }
+
+/* ─── INNER ─── */
+.inner {
+  max-width: 1100px; margin: 0 auto;
+  padding-left: max(48px, env(safe-area-inset-left,0px));
+  padding-right: max(48px, env(safe-area-inset-right,0px));
+}
+
+/* ─── HERO ─── */
+.hero {
+  background: var(--black); min-height: calc(100vh - 88px);
+  display: flex; align-items: center;
+  position: relative; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0; background: #161210;
+  display: flex; align-items: center; justify-content: center;
+}
+.hero-bg-label {
+  color: rgba(255,255,255,.03); font-size: .45rem;
+  letter-spacing: .3em; text-transform: uppercase;
+}
+.hero-body {
+  position: relative; z-index: 2;
+  padding: 80px max(72px, env(safe-area-inset-left,0px)) 100px;
+  max-width: 780px;
+}
+.hero-h1 {
+  font-size: clamp(2.4rem, 4vw, 3.75rem); font-weight: 400; line-height: 1.05;
+  color: var(--mauve); letter-spacing: .01em; margin-bottom: 24px;
+}
+.hero-h1 .it { color: var(--rose); font-size: 1.1em; }
+.hero-sub {
+  font-size: clamp(1rem, 2.1vw, 2rem); color: var(--mauve);
+  font-weight: 300; letter-spacing: .02em; line-height: 1.5;
+}
+
+/* ─── WAVE hero→press ─── */
+.wave-hero-press {
+  background: var(--black); line-height: 0; overflow: visible; position: relative;
+}
+
+/* ─── PRESS ─── */
+.press { background: var(--blush); padding-block: 80px 72px; }
+.press-h2 {
+  font-size: clamp(2.4rem, 5vw, 4.7rem); font-weight: 400;
+  color: var(--mocha); margin-bottom: 52px; line-height: 1;
+}
+.press-h2 .it { color: var(--mocha); font-size: 1.05em; }
+.press-card {
+  display: grid; grid-template-columns: 1fr 1.1fr 1fr;
+  background: var(--mocha);
+  border-radius: 44px; overflow: hidden; min-height: 460px;
+}
+.press-imgs {
+  display: flex; flex-direction: column;
+}
+.p-img {
+  flex: 1; min-height: 100px;
+  background: rgba(255,255,255,.07);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,.05); font-size: .38rem;
+  letter-spacing: .14em; text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,.04);
+}
+.p-img:last-child { border-bottom: none; }
+.press-body {
+  padding: 52px 36px; text-align: center;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.press-logo {
+  font-family: 'Playfair Display', Georgia, serif; font-style: italic;
+  font-size: clamp(2rem, 3.6vw, 3.6rem); font-weight: 400; color: var(--blush);
+  display: block; margin-bottom: 28px;
+}
+.press-body p {
+  font-size: .9rem; line-height: 1.9; color: var(--mauve);
+  margin-bottom: 14px; font-weight: 300;
+}
+.press-body p:last-child { margin-bottom: 0; }
+@media (max-width: 700px) {
+  .press-card { grid-template-columns: 1fr; border-radius: 28px; }
+  .press-imgs { flex-direction: row; height: 100px; }
+  .p-img { border-bottom: none; border-right: 1px solid rgba(255,255,255,.04); }
+  .p-img:last-child { border-right: none; }
+}
+
+/* ─── SERVICES ─── */
+.services { background: var(--blush); padding-bottom: 96px; }
+.srv-h2 {
+  font-size: clamp(2.4rem, 5vw, 4.7rem); font-weight: 400;
+  color: var(--mocha); text-align: center; line-height: 1;
+  padding-top: 80px; padding-bottom: 72px;
+}
+.srv-h2 .it { color: var(--mocha); font-size: 1.05em; }
+.svc-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  column-gap: 56px; row-gap: 56px;
+}
+.svc-item {
+  display: grid; grid-template-columns: 240px 1fr; gap: 28px; align-items: start;
+}
+.svc-img {
+  aspect-ratio: 3/4; background: rgba(84,59,52,.1);
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+  color: rgba(84,59,52,.08); font-size: .38rem;
+  letter-spacing: .12em; text-transform: uppercase;
+}
+.svc-cat {
+  font-size: 1.05rem; font-weight: 400; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--mocha); margin-bottom: 16px; line-height: 1.4;
+}
+.svc-desc {
+  font-size: 1rem; line-height: 1.8; color: var(--dark-body);
+  font-weight: 300; margin-bottom: 24px;
+}
+.svc-btn {
+  display: inline-block; padding: 12px 28px; border-radius: 50px;
+  background: var(--mocha); color: var(--white);
+  font-family: 'League Spartan', sans-serif; font-size: 1rem; font-weight: 300;
+  letter-spacing: .04em; border: none; cursor: pointer; white-space: nowrap;
+}
+.svc-btn:hover { opacity: .85; }
+@media (max-width: 900px) {
+  .svc-grid { grid-template-columns: 1fr; }
+  .svc-item { grid-template-columns: 200px 1fr; }
+}
+@media (max-width: 540px) {
+  .svc-item { grid-template-columns: 1fr; }
+  .svc-img { aspect-ratio: 16/9; }
+}
+
+/* ─── ARCH blush → mocha ─── */
+.arch-blush-mocha { background: var(--blush); line-height: 0; overflow: hidden; }
+
+/* ─── EXTENSIONS ─── */
+.extensions { background: var(--mocha); padding: 20px 0 80px; }
+.ext-h2 {
+  font-size: clamp(2.4rem, 5vw, 4.7rem); font-weight: 400;
+  color: var(--mauve); text-align: center; line-height: 1.1; margin-bottom: 8px;
+}
+.ext-h2 .it { color: var(--mauve); display: block; }
+.ext-sub {
+  font-size: 1rem; color: rgba(196,182,183,.6); text-align: center;
+  margin-bottom: 56px; font-weight: 300; letter-spacing: .03em;
+}
+.circles-row {
+  display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 56px;
+  padding: 0 max(24px, env(safe-area-inset-left,0px));
+}
+.circle {
+  width: 186px; height: 186px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(255,255,255,.08); overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,.06); font-size: .38rem;
+  letter-spacing: .14em; text-transform: uppercase;
+}
+.ext-btn {
+  display: block; margin: 0 auto; width: fit-content;
+  padding: 14px 36px; border-radius: 50px; border: 1px solid rgba(255,220,220,.35);
+  font-family: 'League Spartan', sans-serif; font-size: .9rem; font-weight: 300;
+  letter-spacing: .06em; color: rgba(255,220,220,.8); background: transparent; cursor: pointer;
+}
+.ext-btn:hover { border-color: var(--blush); color: var(--blush); }
+
+/* ─── LOCATION ─── */
+.location { background: var(--mocha); padding-block: 0 72px; }
+.loc-inner {
+  max-width: 1100px; margin: 0 auto;
+  padding-left: max(48px, env(safe-area-inset-left,0px));
+  padding-right: max(48px, env(safe-area-inset-right,0px));
+}
+.loc-h2 {
+  font-size: clamp(2.2rem, 5vw, 4.7rem); font-weight: 400;
+  color: var(--mauve); text-align: center; line-height: 1.05;
+  margin-bottom: 32px;
+}
+.loc-h2 .it { color: var(--mauve); }
+.soc-row {
+  display: flex; gap: 20px; justify-content: center; margin-bottom: 40px;
+}
+.soc-icon {
+  width: 48px; height: 48px; border-radius: 50%;
+  border: 1.5px solid rgba(196,182,183,.4);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--mauve); cursor: pointer;
+}
+.soc-icon:hover { border-color: var(--mauve); }
+.soc-icon svg { stroke: var(--mauve); fill: none; stroke-width: 1.5; }
+.map-ph {
+  width: 100%; height: 320px; background: rgba(0,0,0,.28);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .58rem; letter-spacing: .2em; text-transform: uppercase;
+  color: rgba(255,255,255,.12);
+}
+
+/* ─── BOOKING ─── */
+.booking {
+  background: var(--mocha); position: relative;
+  padding-top: 0;
+}
+.booking-dome-wrap {
+  position: relative; width: 100%; overflow: hidden;
+}
+.booking-dome-svg {
+  display: block; width: 100%; height: 420px;
+  position: absolute; top: 0; left: 0;
+}
+.booking-content {
+  position: relative; z-index: 2;
+  padding-top: 60px;
+  display: flex; flex-direction: column; align-items: center;
+}
+.booking-h2 {
+  font-size: clamp(2rem, 5.5vw, 4.2rem); font-weight: 400;
+  text-align: center; margin-bottom: 40px;
+  color: var(--mocha);
+}
+.booking-h2 .it { color: var(--mocha); }
+.booking-h2 .tu {
+  font-size: clamp(.7rem, 1.2vw, .85rem); font-weight: 300; letter-spacing: .24em;
+  text-transform: uppercase; color: rgba(84,59,52,.6); vertical-align: middle;
+  margin-left: 10px; font-family: 'League Spartan', sans-serif; font-style: normal;
+}
+.contact-row {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap; justify-content: center;
+  background: rgba(255,255,255,.88); border-radius: 80px;
+  padding: 18px 32px; margin-bottom: 0;
+  max-width: 820px; width: 88%;
+}
+.contact-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--blush); border-radius: 50px; padding: 10px 24px;
+  font-family: 'League Spartan', sans-serif; font-size: .82rem; font-weight: 300;
+  color: var(--mocha); flex-shrink: 0;
+}
+.contact-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px; border-radius: 50%;
+  border: 1.5px solid rgba(84,59,52,.28);
+  flex-shrink: 0;
+}
+.contact-icon svg { stroke: rgba(84,59,52,.6); fill: none; stroke-width: 1.5; }
+.contact-hours {
+  font-size: .8rem; color: rgba(84,59,52,.65); line-height: 1.7; text-align: center; flex: 1;
+  min-width: 200px; font-weight: 300;
+}
+.booking-spacer { height: 220px; }
+@media (max-width: 600px) {
+  .contact-row { border-radius: 24px; gap: 12px; padding: 16px 20px; }
+  .booking-dome-svg { height: 300px; }
+  .booking-spacer { height: 160px; }
+}
+
+/* ─── CONTACT ─── */
+.contact { background: var(--mocha); padding: 0 0 100px; }
+.contact-h2 {
+  font-size: clamp(2rem, 5.5vw, 4.2rem); font-weight: 400;
+  text-align: center; margin-bottom: 10px; line-height: 1.1;
+  color: var(--mauve);
+}
+.contact-h2 .it { color: var(--mauve); }
+.contact-sub {
+  font-size: .9rem; color: rgba(196,182,183,.5); text-align: center;
+  margin-bottom: 52px; font-weight: 300; letter-spacing: .03em;
+}
+.contact-form { display: flex; flex-direction: column; max-width: 540px; margin: 0 auto; }
+.contact-form input, .contact-form textarea {
+  width: 100%; background: var(--blush); border: none; border-radius: 10px;
+  padding: 16px 22px; margin-bottom: 10px;
+  font-family: 'League Spartan', sans-serif; font-size: .9rem; font-weight: 300;
+  color: var(--mocha); outline: none; letter-spacing: .02em;
+}
+.contact-form input::placeholder, .contact-form textarea::placeholder {
+  color: rgba(84,59,52,.4);
+}
+.contact-form input:focus, .contact-form textarea:focus {
+  outline: 1.5px solid rgba(84,59,52,.2);
+}
+.contact-form textarea { resize: none; height: 120px; }
+.submit-btn {
+  margin: 28px auto 0; padding: 14px 44px; border-radius: 50px;
+  border: none; background: var(--blush);
+  font-family: 'League Spartan', sans-serif; font-size: .82rem; font-weight: 300;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--mocha);
+  cursor: pointer; display: block;
+}
+.submit-btn:hover { opacity: .85; }
+
+/* ─── WAVE mocha → white ─── */
+.wave-mocha-white { background: var(--mocha); line-height: 0; overflow: hidden; }
+
+/* ─── FOOTER ─── */
+footer { background: var(--white); padding-block: 64px 48px; }
+.foot-grid {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 48px;
+  padding-left: max(48px, env(safe-area-inset-left,0px));
+  padding-right: max(48px, env(safe-area-inset-right,0px));
+  align-items: start;
+}
+.f-head {
+  font-family: 'League Spartan', sans-serif; font-size: .68rem; font-weight: 400;
+  letter-spacing: .24em; color: var(--mauve); margin-bottom: 22px; display: block;
+  text-transform: uppercase;
+}
+.f-icons { display: flex; gap: 12px; margin-bottom: 16px; }
+.f-icon-btn {
+  width: 34px; height: 34px; border-radius: 50%;
+  border: 1.5px solid rgba(196,182,183,.4);
+  display: flex; align-items: center; justify-content: center; cursor: pointer;
+}
+.f-icon-btn svg { stroke: var(--mauve); fill: none; stroke-width: 1.5; }
+.f-icon-btn:hover { border-color: var(--mauve); }
+.f-socials { display: flex; gap: 12px; }
+.f-soc {
+  width: 34px; height: 34px; border-radius: 50%;
+  border: 1.5px solid rgba(196,182,183,.4);
+  display: flex; align-items: center; justify-content: center; cursor: pointer;
+}
+.f-soc svg { stroke: var(--mauve); fill: none; stroke-width: 1.5; }
+.f-soc:hover { border-color: var(--mauve); }
+.brands-center { text-align: center; }
+.brands-main {
+  font-family: 'League Spartan', sans-serif; font-weight: 300;
+  font-size: 2rem; letter-spacing: .14em; color: var(--mocha);
+  display: block; margin-bottom: 18px;
+}
+.brands-logos {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  align-items: center; justify-content: center;
+}
+.brand-logo {
+  font-size: .62rem; letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(84,59,52,.42); border: 1px solid rgba(84,59,52,.14);
+  padding: 5px 10px;
+}
+.f-legal {
+  display: flex; flex-direction: column; gap: 8px; text-align: right;
+}
+.f-legal a {
+  font-size: .65rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--mocha); font-weight: 400; text-decoration: underline;
+}
+.f-legal a:hover { color: var(--mauve); }
+@media (max-width: 720px) {
+  .foot-grid { grid-template-columns: 1fr; }
+  .f-legal { text-align: left; }
+}
+
+/* single-theme */
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { color-scheme: light; } }
+:root[data-theme="dark"] { color-scheme: light; }
+</style>
+
+<!-- NAV SPACER (mauve strip behind fixed nav) -->
+<div class="nav-spacer"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-sk">
+    <svg viewBox="0 0 20 14" width="20" height="14" style="flex-shrink:0">
+      <rect width="20" height="4.67" fill="#fff"/>
+      <rect y="4.67" width="20" height="4.67" fill="#0B4EA2"/>
+      <rect y="9.33" width="20" height="4.67" fill="#EE1C25"/>
+    </svg>
+    SK ▾
+  </div>
+  <div class="nav-menu">MENU <div class="nav-dot"></div></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"><span class="hero-bg-label">video / foto vlasov</span></div>
+  <div class="hero-body">
+    <h1 class="hero-h1">Koruna <span class="it">Krásy</span></h1>
+    <p class="hero-sub">Zažite zázrak Luxusného Zahustenia a Predĺženia vlasov</p>
+  </div>
+</section>
+
+<!-- WAVE: hero (black) → press (blush) — same S-curve as footer wave -->
+<div class="wave-hero-press">
+  <svg viewBox="0 0 1440 180" preserveAspectRatio="none" style="display:block;width:100%;height:180px;">
+    <path d="M0,180 C240,60 600,180 900,80 C1200,-20 1320,120 1440,60 L1440,180 Z" fill="#FADDDD"/>
+  </svg>
+</div>
+
+<!-- PRESS -->
+<section class="press">
+  <div class="inner">
+    <h2 class="press-h2">Napísali <span class="it">o Nás</span></h2>
+
+    <div class="press-card">
+      <div class="press-imgs">
+        <div class="p-img">foto</div>
+        <div class="p-img">foto</div>
+        <div class="p-img">foto</div>
+      </div>
+      <div class="press-body">
+        <span class="press-logo">Moje Zdravie</span>
+        <p>Veľmi si vážime, že sme mohli byť súčasťou článku v magazíne Moje Zdravie, ktorý otvoril dôležitú tému ženského sebavedomia počas onkologickej liečby. ❤️</p>
+        <p>V Studio Exclusive veríme, že vlasy nie sú len o vzhľade, ale aj o pocite ženskosti, sily a identity.</p>
+        <p>Ďakujeme za túto príležitosť aj za dôveru všetkých žien, ktoré sa rozhodli zveriť nám svoj príbeh. ✨</p>
+      </div>
+      <div class="press-imgs">
+        <div class="p-img">foto</div>
+        <div class="p-img">foto</div>
+        <div class="p-img">foto</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+  <div class="inner">
+    <h2 class="srv-h2">Naše <span class="it">Služby</span></h2>
+
+    <div class="svc-grid">
+
+      <div class="svc-item">
+        <div class="svc-img">foto</div>
+        <div>
+          <p class="svc-cat">Predlžovanie/ Zahusťovanie</p>
+          <p class="svc-desc">Výsledný efekt neviditeľnej metódy je nádherný, objemný a popritom vôbec nezaťažuje a neničí Vaše vlastné vlasy ani korienky.</p>
+          <button class="svc-btn">O Predlžovaní/ Zahusťovaní</button>
+        </div>
+      </div>
+
+      <div class="svc-item">
+        <div class="svc-img">foto</div>
+        <div>
+          <p class="svc-cat">Výkup Vlasov</p>
+          <p class="svc-desc">Vaše prirodzené, nefarbené a chemicky neupravované vlasy s dĺžkou min. 35 cm od vás férovo odkúpime. Strih je u nás bezplatný a vlasy profesionálne upravíme podľa vášho želania.</p>
+          <button class="svc-btn">Výkup Vlasov</button>
+        </div>
+      </div>
+
+      <div class="svc-item">
+        <div class="svc-img">foto</div>
+        <div>
+          <p class="svc-cat">Balayage</p>
+          <p class="svc-desc">Najnovší farbiaci systém, po ktorom vlasy pôsobia prirodzene a zdravo a luxusne. Aj po vysokom presvetlení.</p>
+          <button class="svc-btn">O Balayage</button>
+        </div>
+      </div>
+
+      <div class="svc-item">
+        <div class="svc-img">foto</div>
+        <div>
+          <p class="svc-cat">Ošetrenie</p>
+          <p class="svc-desc">Enzymoterapia – je organická regenerácia, novinka na Slovensku – vlasy získajú lesk, silu a pružnosť. Vydrží až do 3 mesiacov.</p>
+          <button class="svc-btn">O Ošetrení</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ARCH blush → mocha: tall dome -->
+<div class="arch-blush-mocha">
+  <svg viewBox="0 0 1440 200" preserveAspectRatio="none" style="display:block;width:100%;height:200px;">
+    <path d="M0,200 Q720,0 1440,200 Z" fill="#543B34"/>
+  </svg>
+</div>
+
+<!-- EXTENSIONS -->
+<section class="extensions">
+  <div class="inner">
+    <h2 class="ext-h2">Zahusťovanie<br><span class="it">a Predlžovanie</span></h2>
+    <p class="ext-sub">Metódou, ktorá konečne neničí vlasy</p>
+  </div>
+  <div class="circles-row">
+    <div class="circle">foto</div>
+    <div class="circle">foto</div>
+    <div class="circle">foto</div>
+    <div class="circle">foto</div>
+    <div class="circle">foto</div>
+    <div class="circle">foto</div>
+  </div>
+  <div class="inner" style="text-align:center;">
+    <a href="#" class="ext-btn">Viac o Metóde Predlžovania a Zahustenia</a>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location">
+  <div class="loc-inner">
+    <h2 class="loc-h2">Nájdete nás<br><span class="it">v Bratislave</span></h2>
+    <div class="soc-row">
+      <a href="https://www.instagram.com/studioexclusive.sk/" target="_blank" class="soc-icon" aria-label="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="https://www.facebook.com/StudioExclusiveBratislavaPoprad" target="_blank" class="soc-icon" aria-label="Facebook">
+        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+    </div>
+    <div class="map-ph">Google Maps — Bratislava, Staré Mesto</div>
+  </div>
+</section>
+
+<!-- BOOKING — mocha bg + mauve dome -->
+<section class="booking">
+  <div class="booking-dome-wrap">
+    <!-- Full-width mauve dome rising from top -->
+    <svg class="booking-dome-svg" viewBox="0 0 1440 420" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,420 Q720,40 1440,420 Z" fill="#C4B6B7"/>
+    </svg>
+    <!-- Content over the dome -->
+    <div class="booking-content">
+      <h2 class="booking-h2"><span class="it">Objednajte sa</span><span class="tu">tu</span></h2>
+      <div class="contact-row">
+        <div class="contact-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,7 12,14 22,7"/></svg>
+        </div>
+        <a href="mailto:studio.exclusive@gmail.com" class="contact-pill">Email</a>
+        <div class="contact-hours">Pondelok – Piatok : 08:00 – 17:00<br>Sobota : 07.00 – 14.00</div>
+        <div class="contact-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.39 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <a href="tel:+421908653820" class="contact-pill">+421 908 653 820</a>
+      </div>
+    </div>
+    <div class="booking-spacer"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+  <div class="inner">
+    <h2 class="contact-h2"><span class="it">Kontaktujte</span> nás</h2>
+    <p class="contact-sub">sme tu pre Vás</p>
+    <form class="contact-form" onsubmit="event.preventDefault()">
+      <input type="text" placeholder="Vaše meno *" required>
+      <input type="email" placeholder="Email *" required>
+      <input type="tel" placeholder="Tel. kontakt *" required>
+      <textarea placeholder="Vaša správa pre nás"></textarea>
+      <button type="submit" class="submit-btn">Odoslať</button>
+    </form>
+  </div>
+</section>
+
+<!-- WAVE mocha → white -->
+<div class="wave-mocha-white">
+  <svg viewBox="0 0 1440 180" preserveAspectRatio="none" style="display:block;width:100%;height:180px;">
+    <path d="M0,180 C240,60 600,180 900,80 C1200,-20 1320,120 1440,60 L1440,180 Z" fill="#ffffff"/>
+  </svg>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <span class="f-head">Kontakt</span>
+      <div class="f-icons">
+        <a href="tel:+421908653820" class="f-icon-btn" aria-label="Telefón">
+          <svg width="15" height="15" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.39 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </a>
+        <a href="mailto:studio.exclusive@gmail.com" class="f-icon-btn" aria-label="Email">
+          <svg width="15" height="15" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,7 12,14 22,7"/></svg>
+        </a>
+      </div>
+      <div class="f-socials">
+        <a href="https://www.facebook.com/StudioExclusiveBratislavaPoprad" target="_blank" class="f-soc" aria-label="Facebook">
+          <svg width="13" height="13" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/studioexclusive.sk/" target="_blank" class="f-soc" aria-label="Instagram">
+          <svg width="13" height="13" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="brands-center">
+      <span class="f-head" style="text-align:center;display:block;">Company Brands</span>
+      <div style="margin-bottom:14px;">
+        <span style="font-family:'League Spartan',sans-serif;font-size:1.8rem;letter-spacing:.14em;color:var(--mocha);font-weight:300;">WOW</span>
+      </div>
+      <div class="brands-logos">
+        <span class="brand-logo">Urban Alchemy</span>
+        <span class="brand-logo">Cruelty Free &amp; Vegan</span>
+        <span class="brand-logo">Vegan</span>
+        <span class="brand-logo">Maria Nila Stockholm</span>
+        <span class="brand-logo">Seliár</span>
+        <span class="brand-logo">Olaplex</span>
+        <span class="brand-logo">Redken</span>
+      </div>
+    </div>
+
+    <div class="f-legal">
+      <a href="#">Reklamačný<br>poriadok</a>
+    </div>
+  </div>
+</footer>

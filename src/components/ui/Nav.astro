@@ -1,0 +1,80 @@
+---
+const links = [
+  { href: '/predlzovanie-zahustovanie', label: 'Predlžovanie & zahusťovanie' },
+  { href: '/balayage', label: 'Balayage' },
+  { href: '/osetrenie', label: 'Ošetrenie' },
+  { href: '/cennik', label: 'Cenník' },
+  { href: '/nas-pribeh', label: 'Náš príbeh' },
+  { href: '/kontakt', label: 'Kontakt' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="fixed top-0 inset-x-0 z-50 bg-cream/90 backdrop-blur-sm border-b border-stone/20">
+  <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+    <a href="/" class="flex items-center" aria-label="Studio Exclusive — domov">
+      <img
+        src="/logo-dark.png"
+        alt="Studio Exclusive"
+        width="160"
+        height="61"
+        class="h-8 w-auto"
+        loading="eager"
+      />
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden lg:flex items-center gap-7">
+      {links.map(l => (
+        <a
+          href={l.href}
+          class={`text-sm font-medium tracking-wide transition-colors hover:text-rose ${currentPath === l.href ? 'text-rose' : 'text-espresso/80'}`}
+        >
+          {l.label}
+        </a>
+      ))}
+    </nav>
+
+    <a
+      href="/objednat-sa"
+      class="hidden lg:inline-flex items-center px-5 py-2.5 rounded-full bg-rose text-cream text-sm font-medium tracking-wide hover:bg-espresso transition-colors"
+    >
+      Objednať konzultáciu
+    </a>
+
+    <!-- Mobile hamburger -->
+    <button
+      id="nav-toggle"
+      class="lg:hidden p-2 text-espresso"
+      aria-label="Otvoriť menu"
+    >
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+        <path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-stone/20 bg-cream">
+    <nav class="flex flex-col px-6 py-4 gap-4">
+      {links.map(l => (
+        <a href={l.href} class="text-sm font-medium text-espresso/80 hover:text-rose transition-colors">
+          {l.label}
+        </a>
+      ))}
+      <a
+        href="/objednat-sa"
+        class="mt-2 inline-flex justify-center px-5 py-2.5 rounded-full bg-rose text-cream text-sm font-medium"
+      >
+        Objednať konzultáciu
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const menu = document.getElementById('mobile-menu');
+  toggle?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+</script>

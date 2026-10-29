@@ -1,0 +1,347 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/ui/Nav.astro';
+import Footer from '../components/ui/Footer.astro';
+---
+
+<Base>
+  <Nav />
+
+  <main>
+
+    <!-- ─── HERO — powder bg, charcoal arch with video/image ─── -->
+    <section class="bg-powder overflow-hidden">
+      <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-6 lg:gap-16 items-end">
+
+        <!-- Arch — flush under nav, no top gap -->
+        <div class="pt-16 flex justify-center lg:justify-start">
+          <div
+            class="w-full max-w-[300px] sm:max-w-[340px] lg:max-w-none lg:w-full aspect-[3/4] bg-charcoal overflow-hidden relative"
+            style="border-radius: 50% 50% 0 0"
+          >
+            <!-- Video/image placeholder -->
+            <div class="absolute inset-0 flex flex-col items-center justify-center gap-3">
+              <div class="w-14 h-14 rounded-full border border-cream/20 flex items-center justify-center">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M7 5l9 5-9 5V5z" fill="white" fill-opacity="0.4"/>
+                </svg>
+              </div>
+              <p class="text-cream/25 text-xs tracking-[0.15em] uppercase text-center">Video / foto príde sem</p>
+            </div>
+            <!-- Rose tint at bottom -->
+            <div class="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-rose/10 to-transparent"></div>
+          </div>
+        </div>
+
+        <!-- Text — vertically centred beside arch -->
+        <div class="pb-16 pt-6 lg:py-24 flex flex-col justify-center">
+          <p class="text-rose text-xs font-medium tracking-[0.2em] uppercase mb-5">Bratislava · Staré Mesto</p>
+          <h1 class="font-heading text-6xl md:text-7xl text-charcoal leading-none mb-5">
+            Koruna<br/><em class="text-rose not-italic">Krásy</em>
+          </h1>
+          <p class="text-charcoal/70 text-lg leading-relaxed mb-2 max-w-sm">
+            Zažite zázrak Luxusného Zahustenia a Predĺženia vlasov
+          </p>
+          <p class="text-charcoal/45 text-sm leading-relaxed mb-8 max-w-sm">
+            Metódou, ktorá konečne neničí vlasy
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="/objednat-sa" class="px-7 py-3.5 rounded-full bg-charcoal text-cream text-sm font-medium tracking-wide hover:bg-rose transition-colors">
+              Objednať konzultáciu
+            </a>
+            <a href="/predlzovanie-zahustovanie" class="px-7 py-3.5 rounded-full border border-charcoal/25 text-charcoal text-sm font-medium tracking-wide hover:border-rose hover:text-rose transition-colors">
+              Zistiť viac
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── METHOD — charcoal bg, pink arch image, cream text ── -->
+    <section class="bg-charcoal py-16 px-6">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+        <!-- Text -->
+        <div>
+          <p class="text-rose text-xs font-medium tracking-[0.2em] uppercase mb-4">Neviditeľná metóda</p>
+          <h2 class="font-heading text-5xl text-cream leading-tight mb-5">
+            Predlžovanie<br/>& zahusťovanie vlasov
+          </h2>
+          <p class="text-cream/60 leading-relaxed mb-4">
+            Výsledný efekt neviditeľnej metódy je nádherný, objemný a popritom vôbec nezaťažuje a neničí Vaše vlastné vlasy ani korienky.
+          </p>
+          <p class="text-cream/60 leading-relaxed mb-5">
+            Predĺžime vlasy z pár centimetrov na akúkoľvek dĺžku. Vlastné vlasy rastú ďalej spolu s predlžovanými. Výsledok je prirodzený — nikto neuhádne.
+          </p>
+          <p class="text-cream/40 text-sm leading-relaxed mb-8 border-l-2 border-rose/40 pl-4">
+            Metóda je <strong class="font-medium text-cream/70">veľmi vhodná aj pre onkologické pacientky</strong> — ako krásna alternatíva k parochni po chemoterapii.
+          </p>
+          <a href="/predlzovanie-zahustovanie" class="inline-flex items-center gap-2 text-rose text-sm font-medium hover:text-cream transition-colors">
+            Celý popis metódy
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <!-- Arch image — pink/powder on dark -->
+        <div class="flex justify-center md:justify-end">
+          <div
+            class="w-64 md:w-72 lg:w-80 aspect-[3/4] bg-powder overflow-hidden relative"
+            style="border-radius: 50% 50% 0 0"
+          >
+            <div class="absolute inset-0 flex flex-col items-center justify-end pb-8 gap-2">
+              <div class="w-8 h-8 rounded-full border border-charcoal/20 flex items-center justify-center">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="#2B2422" stroke-opacity="0.25" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <p class="text-charcoal/25 text-xs tracking-wide text-center">Foto výsledku</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── PROCESS — cream bg, 3 numbered steps ─────────────── -->
+    <section class="bg-cream py-16 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <p class="text-rose text-xs font-medium tracking-[0.2em] uppercase mb-3">Ako to funguje</p>
+          <h2 class="font-heading text-5xl text-charcoal">Tri kroky k vysneným vlasom</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6 lg:gap-10 relative">
+          <!-- Connector line (desktop only) -->
+          <div class="hidden md:block absolute top-8 left-[calc(16.67%+1rem)] right-[calc(16.67%+1rem)] h-px bg-stone/25"></div>
+          {[
+            {
+              num: '01',
+              title: 'Bezplatná konzultácia',
+              desc: 'Prídete do salónu, spoločne prezrieme váš typ vlasov a navrhneme ideálne riešenie. Žiadny záväzok, žiadny poplatok.',
+              detail: '20–40 minút · osobne v salóne',
+            },
+            {
+              num: '02',
+              title: 'Aplikácia predĺženia',
+              desc: 'Neviditeľnou metódou šetrnou k vlasom a pokožke. Vlastné vlasy rastú ďalej, výsledok je dokonale prirodzený.',
+              detail: 'Trvanie závisí od počtu stĺpcov',
+            },
+            {
+              num: '03',
+              title: 'Výsledok, ktorý oslní',
+              desc: 'Klientky sa vracajú každé 3–4 mesiace na údržbu narástnutých predĺžení. Nič viac, nič menej.',
+              detail: 'Fix-up každé 3–4 mesiace',
+            },
+          ].map(step => (
+            <div class="flex flex-col items-center text-center relative">
+              <!-- Number in arch -->
+              <div
+                class="w-16 h-20 bg-powder flex items-center justify-center mb-6 relative z-10"
+                style="border-radius: 50% 50% 0 0"
+              >
+                <span class="font-heading text-2xl text-rose">{step.num}</span>
+              </div>
+              <h3 class="font-heading text-2xl text-charcoal mb-3">{step.title}</h3>
+              <p class="text-charcoal/60 text-sm leading-relaxed mb-3 max-w-xs">{step.desc}</p>
+              <p class="text-stone text-xs tracking-wide">{step.detail}</p>
+            </div>
+          ))}
+        </div>
+        <div class="text-center mt-10">
+          <a href="/objednat-sa" class="inline-flex items-center gap-2 text-rose text-sm font-medium hover:text-charcoal transition-colors">
+            Rezervovať konzultáciu
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SERVICES — powder bg, charcoal cards ─────────────── -->
+    <section class="bg-powder py-16 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-10">
+          <p class="text-rose text-xs font-medium tracking-[0.2em] uppercase mb-3">Čo ponúkame</p>
+          <h2 class="font-heading text-5xl text-charcoal">Naše služby</h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {[
+            { title: 'Predlžovanie & zahusťovanie', desc: 'Neviditeľná metóda. Výsledok, ktorý nikto neuhádne.', href: '/predlzovanie-zahustovanie', featured: true },
+            { title: 'Balayage', desc: 'Prírodný prechod farieb, ručne maľovaný.', href: '/balayage', featured: false },
+            { title: 'Enzymoterapia', desc: 'Hĺbkové ošetrenie pre zdravé a lesklé vlasy.', href: '/osetrenie', featured: false },
+            { title: 'Výkup vlasov', desc: 'Minimálna dĺžka 35 cm. Striháme zdarma.', href: '/vykup-vlasov', featured: false },
+          ].map(s => (
+            <a
+              href={s.href}
+              class={`rounded-2xl p-6 flex flex-col gap-3 hover:-translate-y-1 transition-transform ${s.featured ? 'bg-charcoal' : 'bg-charcoal/85'}`}
+            >
+              <!-- Mini arch decoration -->
+              <div class="w-10 h-6 bg-rose/25 mb-1 shrink-0" style="border-radius: 50% 50% 0 0"></div>
+              <h3 class="font-heading text-xl text-cream leading-snug">{s.title}</h3>
+              <p class="text-cream/50 text-sm leading-relaxed flex-1">{s.desc}</p>
+              <span class="text-rose text-xs font-medium flex items-center gap-1">
+                Viac info
+                <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PRESS — charcoal bg, arch accent, cream quote ─────── -->
+    <section class="bg-charcoal py-16 px-6">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-[160px_1fr] gap-8 lg:gap-16 items-center">
+
+        <!-- Arch accent -->
+        <div class="hidden md:flex justify-center">
+          <div class="w-28 h-44 bg-powder/15" style="border-radius: 50% 50% 0 0"></div>
+        </div>
+
+        <!-- Quote -->
+        <div>
+          <p class="text-rose text-xs font-medium tracking-[0.2em] uppercase mb-6">Ako nás vidí svet</p>
+          <div class="relative">
+            <span class="text-rose font-heading text-7xl leading-none absolute -top-4 -left-1 opacity-25 select-none">&ldquo;</span>
+            <p class="font-heading text-3xl md:text-4xl text-cream leading-relaxed pl-5">
+              Predlžovanie vlasov sa stáva čoraz obľúbenejšou možnosťou aj pre ženy počas onkologickej liečby — ako krásna a sebavedomá alternatíva k parochni.
+            </p>
+          </div>
+          <p class="mt-6 text-cream/30 text-xs font-medium tracking-widest uppercase">— Moje Zdravie</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── GALLERY — powder bg, 3 charcoal arch photo frames ── -->
+    <section class="bg-powder py-16 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-10">
+          <p class="text-rose text-xs font-medium tracking-[0.2em] uppercase mb-3">Výsledky</p>
+          <h2 class="font-heading text-5xl text-charcoal">Pred & po</h2>
+        </div>
+        <div class="grid grid-cols-3 gap-3 md:gap-5">
+          {['Pred predĺžením', 'Výsledok', 'Detail metódy'].map((label) => (
+            <div
+              class="aspect-[3/4] bg-charcoal overflow-hidden relative"
+              style="border-radius: 50% 50% 0 0"
+            >
+              <div class="absolute inset-0 flex flex-col items-center justify-end pb-6 gap-2">
+                <p class="text-cream/20 text-xs tracking-wide text-center px-3">{label}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── STATS — charcoal bg, rose numbers, powder accents ─── -->
+    <section class="bg-charcoal py-16 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-10">
+          <p class="text-rose text-xs font-medium tracking-[0.2em] uppercase mb-3">Prečo my</p>
+          <h2 class="font-heading text-5xl text-cream">20+ rokov skúseností</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-4">
+          {[
+            { num: '20+', label: 'rokov praxe', desc: 'Dlhoročné skúsenosti s najnáročnejšími typmi vlasov.' },
+            { num: '1', label: 'jediná na Slovensku', desc: 'Jediná stylistka na Slovensku, ktorá aplikuje metódu týmto spôsobom.' },
+            { num: '3–4', label: 'mesiace výdrž', desc: 'Klientky sa vracajú každé 3–4 mesiace na údržbu narástnutých predlžení.' },
+          ].map(item => (
+            <div class="border border-cream/10 rounded-2xl p-8 text-center hover:border-rose/30 transition-colors">
+              <!-- Small arch -->
+              <div class="w-10 h-7 bg-powder/10 mx-auto mb-4" style="border-radius: 50% 50% 0 0"></div>
+              <p class="font-heading text-6xl text-rose mb-1">{item.num}</p>
+              <p class="text-cream/70 font-medium mb-2 text-xs tracking-widest uppercase">{item.label}</p>
+              <p class="text-cream/35 text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── BRANDS — cream bg, muted brand names ─────────────── -->
+    <section class="bg-cream py-10 px-6 border-t border-stone/15">
+      <div class="max-w-6xl mx-auto">
+        <p class="text-center text-stone text-xs tracking-[0.2em] uppercase mb-7">Produkty, ktorým dôverujeme</p>
+        <div class="flex flex-wrap justify-center items-center gap-6 md:gap-10">
+          {['Color Wow', 'Urban Alchemy', 'Maria Nila', 'Olaplex', 'Redken'].map(brand => (
+            <span class="font-heading text-lg text-charcoal/30 tracking-wide whitespace-nowrap">{brand}</span>
+          ))}
+          <!-- Cruelty-free badge -->
+          <span class="inline-flex items-center gap-1.5 text-xs text-stone border border-stone/30 rounded-full px-3 py-1.5">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
+              <path d="M8 2C4.7 2 2 4.7 2 8s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm-1 8.4L4.6 8l.9-.9L7 8.6l3.5-3.5.9.9L7 10.4z" fill="currentColor" fill-opacity="0.5"/>
+            </svg>
+            Cruelty-free & vegan
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── INSTAGRAM — powder bg, 6 arch grid ───────────────── -->
+    <section class="bg-powder py-16 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-10">
+          <p class="text-rose text-xs font-medium tracking-[0.2em] uppercase mb-3">Sledujte nás</p>
+          <h2 class="font-heading text-5xl text-charcoal mb-2">@studioexclusive.sk</h2>
+          <a
+            href="https://www.instagram.com/studioexclusive.sk/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-stone text-sm hover:text-rose transition-colors"
+          >
+            Instagram →
+          </a>
+        </div>
+        <!-- 6-photo grid — arch tops, placeholder until IG feed is live -->
+        <div class="grid grid-cols-3 md:grid-cols-6 gap-2 md:gap-3">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <div
+              class="aspect-square bg-charcoal/8 overflow-hidden relative group cursor-pointer"
+              style="border-radius: 50% 50% 0 0 / 40% 40% 0 0"
+            >
+              <!-- Hover overlay -->
+              <div class="absolute inset-0 bg-rose/0 group-hover:bg-rose/10 transition-colors duration-300"></div>
+              <div class="absolute inset-0 flex items-end justify-center pb-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="text-charcoal/40">
+                  <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/>
+                  <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/>
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+                </svg>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CTA — powder bg, charcoal arch, dark button ─────── -->
+    <section class="bg-powder py-16 px-6">
+      <div class="max-w-xl mx-auto text-center">
+        <!-- Decorative arch -->
+        <div class="flex justify-center mb-6">
+          <div class="w-20 h-14 bg-charcoal/12" style="border-radius: 50% 50% 0 0"></div>
+        </div>
+        <p class="text-rose text-xs font-medium tracking-[0.2em] uppercase mb-4">Prvý krok</p>
+        <h2 class="font-heading text-5xl md:text-6xl text-charcoal mb-5 leading-tight">
+          Bezplatná konzultácia<br/>v salóne
+        </h2>
+        <p class="text-charcoal/55 text-base leading-relaxed mb-8">
+          20–40 minút. Pozrieme sa na vaše vlasy, povieme vám čo je možné a navrhneme ideálny výsledok. Bez záväzku, bez poplatku.
+        </p>
+        <a href="/objednat-sa" class="inline-flex items-center px-10 py-4 rounded-full bg-charcoal text-cream font-medium tracking-wide hover:bg-rose transition-colors">
+          Objednajte sa tu
+        </a>
+        <p class="mt-4 text-charcoal/30 text-sm tracking-wide">sme tu pre Vás</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Mobile sticky CTA -->
+  <div class="fixed bottom-0 inset-x-0 z-40 lg:hidden p-4 bg-powder/95 backdrop-blur-sm border-t border-charcoal/10">
+    <a href="/objednat-sa" class="flex items-center justify-center w-full py-3.5 rounded-full bg-charcoal text-cream font-medium tracking-wide">
+      Objednať konzultáciu
+    </a>
+  </div>
+
+  <Footer />
+</Base>

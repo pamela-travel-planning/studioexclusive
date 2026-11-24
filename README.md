@@ -1,43 +1,18 @@
-# Astro Starter Kit: Minimal
+# Studio Exclusive Bratislava
 
-```sh
-npm create astro@latest -- --template minimal
+Website for STUDIO EXCLUSIVE, a hair salon in Bratislava. Moved here from Lovable (studio-exclusive-bratislava.lovable.app) on 24 Nov 2026.
+
+- Framework: TanStack Start (React) + Tailwind CSS
+- Hosting: Netlify (builds from this repo's `main` branch)
+- Forms: Netlify Forms (`kontakt`, `kariera`), defined in `public/__forms.html`
+- Booking: Acuity Scheduling embed on `/konzultacia`
+- Photos and hero video still load from Wix's media servers (static.wixstatic.com / video.wixstatic.com)
+
+## Develop
+
+```
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Original brief and spec: see `docs/`.
